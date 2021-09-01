@@ -74,6 +74,9 @@ button.primary {
 button.block {
   width: 100%;
 }
+button:hover {
+  border: 0.1rem #404040 solid;
+}
 /* Header */
 header a {
   color: blue;
@@ -100,13 +103,13 @@ a.brand {
 .col-1 {
   flex: 1 1 25rem;
 }
+/* ^ 1 -- 1 of 4
+1 -- make it shrinkable
+25rem -- sets width of this column */
+
 .col-2 {
   flex: 2 1 50rem;
 }
-
-/* 1 -- 1 of 4
-1 -- make it shrinkable
-25rem -- sets width of this column */
 
 /* Image */
 img {
@@ -120,6 +123,7 @@ img.medium {
 img.large {
   width: 100%;
 }
+/* ^ This allows the page to be more responsive in that the img takes up the width of the page if sized down */
 
 /* Card */
 .card {
