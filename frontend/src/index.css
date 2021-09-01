@@ -46,6 +46,16 @@ a {
 a:hover {
   color: #ff8000;
 }
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+li {
+  margin-top: 1rem;
+}
 /* Header */
 header a {
   color: blue;
@@ -70,6 +80,17 @@ a.brand {
   align-items: flex-start;
 }
 
+.col-1 {
+  flex: 1 1 25rem;
+}
+
+/* 1 -- 1 of 4
+1 -- make it shrinkable
+25rem -- sets width of this column */
+
+.col-2 {
+  flex: 2 1 50rem;
+}
 /* Image */
 img {
   border-radius: 0.5rem;
