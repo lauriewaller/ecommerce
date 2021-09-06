@@ -7,8 +7,13 @@ npm init
 npm install express
 node backend/server.js
 (node --experimental-modules backend/server.js --> for version 12)
+
 npm install --save-dev nodemon
 --automatically reruns node server when something changes
 --"scripts": {
 "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
+Installing nodemon allows us to watchfor changes in the server instead of restarting
+
 --once this is installed, can run npm start instead
+
+**Ran into a note that the script could not be found. Uninstalling and reinstalling node_modules fixed this.**
