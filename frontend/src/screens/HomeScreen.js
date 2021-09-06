@@ -34,7 +34,7 @@ export default function HomeScreen() {
         <div className="row center">
           {products.map((product) => (
             // key here allows each card to be separated based on id from each obj
-            <Product key={product.id} product={product} />
+            <Product key={product._id} product={product} />
           ))}
         </div>
       )}

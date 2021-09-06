@@ -36,13 +36,13 @@ export default function ProductScreen(props) {
           <div className="card card-body">
             <ul>
               <li>
-                <div class="row">
+                <div className="row">
                   <div>Price</div>
                   <div className="price">${product.price}</div>
                 </div>
               </li>
               <li>
-                <div class="row">
+                <div className="row">
                   <div>Status:</div>
                   <div>
                     {product.countInStock > 0 ? (
