@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Product from "./../components/Product";
+import MessageBox from "../components/MessageBox";
+import LoadingBox from "../components/LoadingBox";
 
 export default function HomeScreen() {
   const [products, setProducts] = useState([]); // sets default value to empty array
@@ -27,7 +29,7 @@ export default function HomeScreen() {
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
-        <MessageBox>{error}</MessageBox>
+        <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <div className="row center">
           {products.map((product) => (
