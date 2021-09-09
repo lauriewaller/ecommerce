@@ -1,28 +1,18 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
 import Product from "./../components/Product";
 import MessageBox from "../components/MessageBox";
 import LoadingBox from "../components/LoadingBox";
+import { useDispatch, useSelector } from "react-redux";
+import { listProducts } from "../actions/productActions";
 
 export default function HomeScreen() {
-  const [products, setProducts] = useState([]); // sets default value to empty array
-  const [loading, setLoading] = useState(false); //default value for loading is false  since by default i'm not loading anythign
-  const [error, setError] = useState(false);
+  const dispatch = useDispatch();
+  const productList = useSelector((state) => state.productList);
+  const { loading, error, products } = productList;
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        const { data } = await axios.get("/api/products"); // the array in backend will be transfreerd to data in frontend
-        setLoading(false);
-        setProducts(data);
-      } catch (err) {
-        setError(err.message);
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, []); // fills the products. another hook that happens when comp did mounts to page. first param is a function and second is an array that accepts dependencies. This has no dependencies. this function will run only one time
+    dispatch(listProducts());
+  }, [dispatch]); // fills the products. another hook that happens when comp did mounts to page. first param is a function and second is an array that accepts dependencies. This has no dependencies. this function will run only one time
   //sends ajax req to backaend and fetch products
   return (
     <div>
