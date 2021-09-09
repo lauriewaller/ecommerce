@@ -13,7 +13,7 @@ export default function HomeScreen() {
   useEffect(() => {
     dispatch(listProducts());
   }, [dispatch]); // fills the products. another hook that happens when comp did mounts to page. first param is a function and second is an array that accepts dependencies. This has no dependencies. this function will run only one time
-  //sends ajax req to backaend and fetch products
+  //sends ajax req to backend and fetch products
   return (
     <div>
       {loading ? (
