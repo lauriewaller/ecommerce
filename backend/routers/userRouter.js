@@ -15,11 +15,10 @@ userRouter.get(
     res.send({ createdUsers });
   })
 );
-
+//create a backend api to authenticate users at this address:
 userRouter.post(
   "/signin",
   expressAsyncHandler(async (req, res) => {
-    //compares email in db with sign-in email
     const user = await User.findOne({ email: req.body.email });
     if (user) {
       if (bcrypt.compareSync(req.body.password, user.password)) {
@@ -28,7 +27,6 @@ userRouter.post(
           name: user.name,
           email: user.email,
           isAdmin: user.isAdmin,
-          //generates hash string
           token: generateToken(user),
         });
         return;

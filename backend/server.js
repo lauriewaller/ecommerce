@@ -1,9 +1,15 @@
 import express from "express";
 import mongoose from "mongoose";
+import dotenv from "dotenv";
 import userRouter from "./routers/userRouter.js";
 import productRouter from "./routers/productRouter.js";
 
+dotenv.config();
+
 const app = express();
+app.use(express.json()); // adds new middleware to parse JSON data in body of request. Fixes "message": "Cannot read property 'email' of undefined" when making Post request.
+app.use(express.urlencoded({ extended: true })); //this line also works in tandem so that all post requests with a body will be parsed.
+
 mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost/amazona", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
