@@ -1,8 +1,14 @@
 import express from "express";
+import mongoose from "mongoose";
 import data from "./data.js";
+import userRouter from "./routers/userRouter.js";
 
-//create an app from express
 const app = express();
+mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost/amazona", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+});
 
 app.get("/api/products/:id", (req, res) => {
   const product = data.products.find((x) => x._id === req.params.id);
@@ -16,21 +22,16 @@ app.get("/api/products/:id", (req, res) => {
 app.get("/api/products", (req, res) => {
   res.send(data.products);
 });
-
-// define first route. root of backend will respond "server is ready" when opened
-//create a handler for this path -- handler will accept request and respond
+app.use("/api/users", userRouter);
 app.get("/", (req, res) => {
-  res.send("Server is ready!");
+  res.send("Server is ready");
+});
+
+app.use((err, req, res, next) => {
+  res.status(500).send({ message: err.message });
 });
 
 const port = process.env.PORT || 5000;
-
-// call listen method of app
 app.listen(port, () => {
   console.log(`Serve at http://localhost:${port}`);
 });
-
-//entry point of backend application
-//Creates an Express server. Express is a node package that makes it easy to create a powerful server
-//npm init
-//npm install express

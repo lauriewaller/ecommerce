@@ -2,20 +2,16 @@ import express from "express";
 import expressAsyncHandler from "express-async-handler";
 import data from "../data.js";
 import User from "../models/userModel.js";
-//function that makes our code modular. instead of having all router in server.js, we can define more files to house our routers.
+
 const userRouter = express.Router();
 
 userRouter.get(
   "/seed",
   expressAsyncHandler(async (req, res) => {
-    // await User.remove({});
+    //await User.remove({});
     const createdUsers = await User.insertMany(data.users);
     res.send({ createdUsers });
   })
 );
 
 export default userRouter;
-
-//this creates a seed API to create admin user. this is our first router
-//uses express to create the router
-//
