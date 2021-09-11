@@ -8,9 +8,12 @@ const userSchema = new mongoose.Schema(
     isAdmin: { type: Boolean, default: false, required: true },
   },
   {
+    //adds created at and updated at for the above four fields
+
     timestamps: true,
   }
-  //adds created at and updated at for the above four fields
 );
+//sets model name and the schema
+
 const User = mongoose.model("User", userSchema);
 export default User;
