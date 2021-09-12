@@ -1,12 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { signin } from "../actions/userActions";
+// import LoadingBox from '../components/LoadingBox';
+// import MessageBox from '../components/MessageBox';
 
 export default function SigninScreen() {
+  //for set email and set pw, we create a hook:
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+
   const submitHandler = (e) => {
     e.preventDefault();
-    // TODO: sign in action
+    dispatch(signin(email, password));
   };
   return (
     <div>
@@ -17,6 +24,7 @@ export default function SigninScreen() {
         <div>
           <label htmlFor="email">Email address</label>
           <input
+            // by setting id to email, w are connecting this input to the label above
             type="email"
             id="email"
             placeholder="Enter email"
