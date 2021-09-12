@@ -18,6 +18,7 @@ export const register = (name, email, password) => async (dispatch) => {
       password,
     });
     dispatch({ type: USER_REGISTER_SUCCESS, payload: data });
+    //updates the store based on user sign in. Because in app.js we'll read user sign in to authenticate user.
     dispatch({ type: USER_SIGNIN_SUCCESS, payload: data });
     localStorage.setItem("userInfo", JSON.stringify(data));
   } catch (error) {
