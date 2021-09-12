@@ -196,6 +196,7 @@ img.large {
   max-width: 60rem;
   margin: 0 auto;
 }
+/* margin: 0 auto centers the form */
 .form > div {
   display: flex;
   flex-direction: column;
