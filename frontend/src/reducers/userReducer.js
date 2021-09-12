@@ -10,6 +10,7 @@ export const userSigninReducer = (state = {}, action) => {
     case USER_SIGNIN_REQUEST:
       return { loading: true };
     case USER_SIGNIN_SUCCESS:
+      //action.payload comes from userAction dispatch line under detailsProduct
       return { loading: false, userInfo: action.payload };
     case USER_SIGNIN_FAIL:
       return { loading: false, error: action.payload };
