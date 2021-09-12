@@ -59,7 +59,7 @@ function App() {
           <Route path="/" component={HomeScreen} exact></Route>
           <Route path="/signin" component={SigninScreen}></Route>
         </main>
-        <footer className="row center">All right reserved</footer>
+        <footer className="row center">All rights reserved</footer>
       </div>
     </BrowserRouter>
   );
