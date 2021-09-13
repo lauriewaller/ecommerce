@@ -17,6 +17,9 @@ const initialState = {
     cartItems: localStorage.getItem("cartItems")
       ? JSON.parse(localStorage.getItem("cartItems"))
       : [],
+    shippingAddress: localStorage.getItem("shippingAddress")
+      ? JSON.parse(localStorage.getItem("shippingAddress"))
+      : {},
   },
 }; // const reducer = (state, action) => {
 //   return { products: data.products }; // this reducer is what actually returns our list of products to the store and is why we can access products in the store.
