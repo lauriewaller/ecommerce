@@ -20,6 +20,7 @@ const initialState = {
     shippingAddress: localStorage.getItem("shippingAddress")
       ? JSON.parse(localStorage.getItem("shippingAddress"))
       : {},
+    paymentMethod: "PayPal",
   },
 };
 //JSON.parse converts to a JS object
