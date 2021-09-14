@@ -21,7 +21,10 @@ const initialState = {
       ? JSON.parse(localStorage.getItem("shippingAddress"))
       : {},
   },
-}; // const reducer = (state, action) => {
+};
+//JSON.parse converts to a JS object
+
+// const reducer = (state, action) => {
 //   return { products: data.products }; // this reducer is what actually returns our list of products to the store and is why we can access products in the store.
 // };
 
@@ -40,5 +43,5 @@ const store = createStore(
   initialState,
   composeEnhancer(applyMiddleware(thunk))
 );
-
+store.subscribe(() => console.log("store data = " + store.getState()));
 export default store;

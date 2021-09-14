@@ -25,6 +25,8 @@ export const cartReducer = (state = { cartItems: [] }, action) => {
         cartItems: state.cartItems.filter((x) => x.product !== action.payload),
       };
     case CART_SAVE_SHIPPING_ADDRESS:
+      // payload contains the data you set in the saveShippingAddress action. This data comes from the ShippingAddressScreen (in the dispatch(saveShippingAddress({})) line). In the cartAction, we pass the data as a single object. This is why the address info is wrapped in curly brackets in the ShippingAddressScreen dispatch.
+      //I think all of this data (add items, delete items, address, etc.,) is stored in the cartItems array and then used to process the order
       return { ...state, shippingAddress: action.payload };
     default:
       return state;
