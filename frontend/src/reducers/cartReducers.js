@@ -1,6 +1,7 @@
 import {
   CART_ADD_ITEM,
   CART_REMOVE_ITEM,
+  CART_SAVE_PAYMENT_METHOD,
   CART_SAVE_SHIPPING_ADDRESS,
 } from "../constants/cartConstants";
 
@@ -28,6 +29,8 @@ export const cartReducer = (state = { cartItems: [] }, action) => {
       // payload contains the data you set in the saveShippingAddress action. This data comes from the ShippingAddressScreen (in the dispatch(saveShippingAddress({})) line). In the cartAction, we pass the data as a single object. This is why the address info is wrapped in curly brackets in the ShippingAddressScreen dispatch.
       //I think all of this data (add items, delete items, address, etc.,) is stored in the cartItems array and then used to process the order
       return { ...state, shippingAddress: action.payload };
+    case CART_SAVE_PAYMENT_METHOD:
+      return { ...state, paymentMethod: action.payload };
     default:
       return state;
   }
