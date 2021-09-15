@@ -18,6 +18,7 @@ export default function PaymentMethodScreen(props) {
   };
   return (
     <div>
+      {/* sets steps1-3 as true */}
       <CheckoutSteps step1 step2 step3></CheckoutSteps>
       <form className="form" onSubmit={submitHandler}>
         <div>
