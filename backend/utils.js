@@ -15,3 +15,31 @@ export const generateToken = (user) => {
     }
   );
 };
+//creating a middleware to authenticate user
+export const isAuth = (req, res, next) => {
+  // gets auth filled from headers of this request
+  const authorization = req.headers.authorization;
+  if (authorization) {
+    // get token from authorization
+    const token = authorization.slice(7, authorization.length); // authorization format is like this: Bearer XXXXXX. So, we remove "Bearer ".
+    //use jwt to decrypt the token
+    jwt.verify(
+      token,
+      //if doesn't exist, use somethingsecret
+      process.env.JWT_SECRET || "somethingsecret",
+      (err, decode) => {
+        if (err) {
+          res.status(401).send({ message: "Invalid Token" });
+        } else {
+          //decode here is the info about the user
+          //fills req.user with decode. Within jwt.verify, decode gives us access to _id, name, etc created under jwt.sign above
+          req.user = decode;
+          //then, with next, we pass user property to the next middleware, which is in orderRouter
+          next();
+        }
+      }
+    );
+  } else {
+    res.status(401).send({ message: "No Token" });
+  }
+};
