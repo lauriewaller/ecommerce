@@ -4,6 +4,7 @@ import { savePaymentMethod } from "../actions/cartActions";
 import CheckoutSteps from "../components/CheckoutSteps";
 
 export default function PaymentMethodScreen(props) {
+  //use hook to import cart data from store
   const cart = useSelector((state) => state.cart);
   const { shippingAddress } = cart;
   if (!shippingAddress.address) {
