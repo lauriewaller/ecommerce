@@ -7,11 +7,14 @@ import {
 } from "../constants/orderConstants";
 
 export const createOrder = (order) => async (dispatch, getState) => {
+  //in reducer, ORDER_CREATE_REQUEST returns loading:true. ORDER_CREATE_SUCCESS returns loading: false, success: true, order: action.payload
   dispatch({ type: ORDER_CREATE_REQUEST, payload: order });
   try {
     const {
+      // getState returns the whole redux store
       userSignin: { userInfo },
     } = getState();
+    //sends AJAX request
     const { data } = await Axios.post("/api/orders", order, {
       headers: {
         Authorization: `Bearer ${userInfo.token}`,

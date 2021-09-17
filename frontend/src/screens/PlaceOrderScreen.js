@@ -26,8 +26,10 @@ export default function PlaceOrderScreen(props) {
   cart.totalPrice = cart.itemsPrice + cart.shippingPrice + cart.taxPrice;
   const dispatch = useDispatch();
   const placeOrderHandler = () => {
+    // inside createOrder, deconstructs cart to rename as orderItems because the backend expects orderItems
     dispatch(createOrder({ ...cart, orderItems: cart.cartItems }));
   };
+  //accepts a func and a dependency list
   useEffect(() => {
     if (success) {
       props.history.push(`/order/${order._id}`);
