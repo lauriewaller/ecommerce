@@ -9,27 +9,34 @@ import MessageBox from "../components/MessageBox";
 
 export default function OrderScreen(props) {
   const orderId = props.match.params.id;
+  //get status of PayPal SDK
   const [sdkReady, setSdkReady] = useState(false);
 
   const orderDetails = useSelector((state) => state.orderDetails);
   const { order, loading, error } = orderDetails;
   const dispatch = useDispatch();
   useEffect(() => {
+    //send req to backend to get client id
     const addPayPalScript = async () => {
+      // data contains client id
       const { data } = await Axios.get("/api/config/paypal");
+      // creates script element
       const script = document.createElement("script");
       script.type = "text/javascript";
       script.src = `https://www.paypal.com/sdk/js?client-id=${data}`;
       script.async = true;
+      //onload is an event handler and happens when the script.src url is ready to load
       script.onload = () => {
         setSdkReady(true);
       };
+      //adds script to document body. By running this line, this entire script will be added as the last child of the body in the HTML document
       document.body.appendChild(script);
     };
     if (!order) {
       dispatch(detailsOrder(orderId));
     } else {
       if (!order.isPaid) {
+        //checks if paypal is already loaded
         if (!window.paypal) {
           addPayPalScript();
         } else {
@@ -37,6 +44,7 @@ export default function OrderScreen(props) {
         }
       }
     }
+    //when there is a change in order, orderId, sdkReady, addPayPalScript will run
   }, [dispatch, order, orderId, sdkReady]);
 
   const successPaymentHnadler = () => {
