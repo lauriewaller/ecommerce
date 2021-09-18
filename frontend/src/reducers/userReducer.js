@@ -39,7 +39,7 @@ export const userSigninReducer = (state = {}, action) => {
       return state;
   }
 };
-
+// we call user details at the very beginning of loading the page, which is why we set loading to true
 export const userDetailsReducer = (state = { loading: true }, action) => {
   switch (action.type) {
     case USER_DETAILS_REQUEST:

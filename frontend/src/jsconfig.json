@@ -4,3 +4,5 @@
   },
   "exclude": ["node_modules"]
 }
+
+// This allows for better auto import functionality in React
