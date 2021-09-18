@@ -49,3 +49,5 @@ orderRouter.get(
 );
 
 export default orderRouter;
+
+//expressAsyncHandler allows us to catch errors with async functions
