@@ -9,7 +9,7 @@ import MessageBox from "../components/MessageBox";
 
 export default function OrderScreen(props) {
   const orderId = props.match.params.id;
-  //get status of PayPal SDK
+  //gets status of PayPal SDK
   const [sdkReady, setSdkReady] = useState(false);
 
   const orderDetails = useSelector((state) => state.orderDetails);
