@@ -39,7 +39,9 @@ export default function OrderScreen(props) {
       //adds script to document body. By running this line, this entire script will be added as the last child of the body in the HTML document
       document.body.appendChild(script);
     };
+    //in these situations, we need to refresh the page and update the page based on the new order
     if (!order || successPay || (order && order._id !== orderId)) {
+      //adding this line corrected the infinite loading issue when paying for order
       dispatch({ type: ORDER_PAY_RESET });
       dispatch(detailsOrder(orderId));
     } else {
@@ -56,6 +58,7 @@ export default function OrderScreen(props) {
   }, [dispatch, order, orderId, sdkReady, successPay]);
 
   const successPaymentHandler = (paymentResult) => {
+    //first param is the order itself. paymentResult is the result of your PayPal payment
     dispatch(payOrder(order, paymentResult));
   };
   return loading ? (
