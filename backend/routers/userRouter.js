@@ -73,6 +73,7 @@ userRouter.put(
   expressAsyncHandler(async (req, res) => {
     const user = await User.findById(req.user._id);
     if (user) {
+      //if user enters empty string, uses the previous name
       user.name = req.body.name || user.name;
       user.email = req.body.email || user.email;
       if (req.body.password) {
