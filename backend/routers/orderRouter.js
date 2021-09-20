@@ -17,7 +17,7 @@ orderRouter.get(
 //creates an api for post request to /api/orders
 orderRouter.post(
   "/",
-  isAuth, // gives us access to user property on line 25
+  isAuth, // gives us access to user property below
   expressAsyncHandler(async (req, res) => {
     if (req.body.orderItems.length === 0) {
       res.status(400).send({ message: "Cart is empty" });
