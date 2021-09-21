@@ -21,6 +21,7 @@ productRouter.get(
     res.send({ createdProducts });
   })
 );
+
 //returns product details
 productRouter.get(
   "/:id",
@@ -31,6 +32,20 @@ productRouter.get(
       res.send(product);
     } else {
       res.status(404).send({ message: "Product Not Found" });
+    }
+  })
+);
+
+//returns product categories
+productRouter.get(
+  "/category/:category",
+  expressAsyncHandler(async (req, res) => {
+    //findById returns a promise. By using await, this will be converted to real data and set to product
+    const products = await Product.where({ category: req.params.category });
+    if (products) {
+      res.send(products);
+    } else {
+      res.status(404).send({ message: "Product Categories Not Found" });
     }
   })
 );
