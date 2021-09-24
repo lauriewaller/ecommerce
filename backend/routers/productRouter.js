@@ -16,7 +16,6 @@ productRouter.get(
 productRouter.get(
   "/seed",
   expressAsyncHandler(async (req, res) => {
-    // await Product.remove({});
     const createdProducts = await Product.insertMany(data.products);
     res.send({ createdProducts });
   })
@@ -36,18 +35,32 @@ productRouter.get(
   })
 );
 
-//returns product categories
+//returns products in a specific category
 productRouter.get(
   "/category/:category",
   expressAsyncHandler(async (req, res) => {
-    //findById returns a promise. By using await, this will be converted to real data and set to product
     const products = await Product.where({ category: req.params.category });
     if (products) {
       res.send(products);
     } else {
-      res.status(404).send({ message: "Product Categories Not Found" });
+      res.status(404).send({ message: "Products for Category Not Found" });
+    }
+  })
+);
+
+//returns all categories of products
+productRouter.get(
+  "/categories/all",
+  expressAsyncHandler(async (req, res) => {
+    const categories = await Product.find().distinct("category");
+    if (categories) {
+      res.send(categories);
+    } else {
+      res.status(404).send({ message: "Categories Not Found" });
     }
   })
 );
 
 export default productRouter;
+
+// .find().sort({field : 1}).distinct('field')
