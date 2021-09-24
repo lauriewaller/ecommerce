@@ -9,6 +9,9 @@ import {
   PRODUCT_CATEGORIES_REQUEST,
   PRODUCT_CATEGORIES_SUCCESS,
   PRODUCT_CATEGORIES_FAIL,
+  CATEGORY_LIST_FAIL,
+  CATEGORY_LIST_REQUEST,
+  CATEGORY_LIST_SUCCESS,
 } from "../constants/productConstants";
 
 export const listProducts = () => async (dispatch) => {
@@ -54,5 +57,17 @@ export const categoriesProduct = (productCategory) => async (dispatch) => {
           ? error.response.data.message
           : error.message,
     });
+  }
+};
+
+export const listCategories = () => async (dispatch) => {
+  dispatch({
+    type: CATEGORY_LIST_REQUEST,
+  });
+  try {
+    const { data } = await Axios.get("/api/categories/all");
+    dispatch({ type: CATEGORY_LIST_SUCCESS, payload: data });
+  } catch (error) {
+    dispatch({ type: CATEGORY_LIST_FAIL, payload: error.message });
   }
 };
