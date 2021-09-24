@@ -8,6 +8,9 @@ const {
   PRODUCT_CATEGORIES_REQUEST,
   PRODUCT_CATEGORIES_SUCCESS,
   PRODUCT_CATEGORIES_FAIL,
+  CATEGORY_LIST_FAIL,
+  CATEGORY_LIST_REQUEST,
+  CATEGORY_LIST_SUCCESS,
 } = require("../constants/productConstants");
 
 export const productListReducer = (
@@ -52,6 +55,22 @@ export const productCategoriesReducer = (
     case PRODUCT_CATEGORIES_SUCCESS:
       return { loading: false, product: action.payload };
     case PRODUCT_CATEGORIES_FAIL:
+      return { loading: false, error: action.payload };
+    default:
+      return state;
+  }
+};
+
+export const categoryListReducer = (
+  state = { loading: true, categories: [] },
+  action
+) => {
+  switch (action.type) {
+    case CATEGORY_LIST_REQUEST:
+      return { loading: true };
+    case CATEGORY_LIST_SUCCESS:
+      return { loading: false, categories: action.payload };
+    case CATEGORY_LIST_FAIL:
       return { loading: false, error: action.payload };
     default:
       return state;
