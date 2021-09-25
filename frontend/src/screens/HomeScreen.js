@@ -4,6 +4,7 @@ import MessageBox from "../components/MessageBox";
 import LoadingBox from "../components/LoadingBox";
 import { useDispatch, useSelector } from "react-redux";
 import { listCategories } from "../actions/productActions";
+import { Link } from "react-router-dom";
 
 export default function HomeScreen() {
   const dispatch = useDispatch();
@@ -25,7 +26,11 @@ export default function HomeScreen() {
         <div className="row center">
           {categories.map((category) => (
             // key here allows each card to be separated based on id from each obj
-            <p>{category}</p>
+            <div>
+              <Link to={`/category/${category}`}>
+                <p>{category}</p>
+              </Link>
+            </div>
           ))}
         </div>
       )}
