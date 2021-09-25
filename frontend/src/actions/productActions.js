@@ -65,7 +65,7 @@ export const listCategories = () => async (dispatch) => {
     type: CATEGORY_LIST_REQUEST,
   });
   try {
-    const { data } = await Axios.get("/api/categories/all");
+    const { data } = await Axios.get("/api/products/categories/all");
     dispatch({ type: CATEGORY_LIST_SUCCESS, payload: data });
   } catch (error) {
     dispatch({ type: CATEGORY_LIST_FAIL, payload: error.message });

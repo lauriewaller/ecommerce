@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Product from "./../components/Product";
+//import Product from "./../components/Product";
 import MessageBox from "../components/MessageBox";
 import LoadingBox from "../components/LoadingBox";
 import { useDispatch, useSelector } from "react-redux";
@@ -23,9 +23,9 @@ export default function HomeScreen() {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <div className="row center">
-          {categories.map((product) => (
+          {categories.map((category) => (
             // key here allows each card to be separated based on id from each obj
-            <p>category</p>
+            <p>{category}</p>
           ))}
         </div>
       )}
