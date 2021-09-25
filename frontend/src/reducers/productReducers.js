@@ -46,14 +46,14 @@ export const productDetailsReducer = (
 };
 
 export const productCategoriesReducer = (
-  state = { product: {}, loading: true },
+  state = { products: [], loading: true },
   action
 ) => {
   switch (action.type) {
     case PRODUCT_CATEGORIES_REQUEST:
       return { loading: true };
     case PRODUCT_CATEGORIES_SUCCESS:
-      return { loading: false, product: action.payload };
+      return { loading: false, products: action.payload };
     case PRODUCT_CATEGORIES_FAIL:
       return { loading: false, error: action.payload };
     default:
