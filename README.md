@@ -7,9 +7,11 @@ The initial stage of my capstone project. Users can currently view a splash page
 - MongoDB
 - Express.js
 - Node.js
+- Axios
 - React
 - React-router
 - Redux
+- Redux Thunk
 - Mongoose
 - PayPal API
 - Heroku
