@@ -18,7 +18,7 @@ export default function Header() {
       <header className="row">
         <div>
           <Link className="brand" to="/">
-            Laurie
+            Fig Tree
           </Link>
         </div>
         <div>

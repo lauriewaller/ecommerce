@@ -4,6 +4,7 @@ html {
 }
 body {
   margin: 0;
+  background-color: #d0c1db;
   height: 100vh;
   font-size: 1.6rem;
   font-family: Helvetica, Arial, sans-serif;
@@ -152,7 +153,7 @@ img.large {
 /* Card */
 .card {
   border: 0.1rem #c0c0c0 solid;
-  background-color: #f8f8f8;
+  background-color: #e6e6fa;
   border-radius: 0.5rem;
   margin: 1rem;
 }
@@ -167,7 +168,7 @@ img.large {
 }
 /* Rating */
 .rating span {
-  color: #f0c040;
+  /* color: #f0c040; */
   margin: 0.1rem;
 }
 .rating span:last-child {
@@ -205,7 +206,7 @@ img.large {
   max-width: 60rem;
   margin: 0 auto;
 }
-/* margin: 0 auto centers the form */
+/* (margin: 0 auto centers the form) */
 .form > div {
   display: flex;
   flex-direction: column;
@@ -266,8 +267,47 @@ img.large {
   margin: 0 0.2rem;
 }
 
+/* category */
+
+.category {
+  min-width: 30rem;
+  min-height: 50rem;
+  /* border-collapse: collapse;
+  border-spacing: 10px; */
+  border: 0.1rem #c0c0c0 solid;
+  background-color: #e6e6fa;
+
+  /* justify-content: space-between; */
+  /* border-inline-width: 0.1rem solid black; */
+  text-align: center;
+  margin: 1rem;
+  border-radius: 0.5rem;
+}
+
+.test {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  align-items: center;
+  justify-content: center;
+}
+
 /* misc */
 
 div .link:hover {
   color: blue;
 }
+
+/* border: 0.1rem #c0c0c0 solid;
+background-color: #e6e6fa;
+border-radius: 0.5rem; */
+
+/* .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.row.center {
+  justify-content: center;
+} */

@@ -23,12 +23,14 @@ export default function HomeScreen() {
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
-        <div className="row center">
+        <div className="test">
           {categories.map((category) => (
             // key here allows each card to be separated based on id from each obj
-            <div key={category}>
+            <div>
               <Link to={`/category/${category}`}>
-                <p>{category}</p>
+                <div key={category} className="category">
+                  <p>{category}</p>
+                </div>
               </Link>
             </div>
           ))}

@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Link, Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import PrivateRoute from "./components/PrivateRoute";
 import CartScreen from "./screens/CartScreen";
 import HomeScreen from "./screens/HomeScreen";
@@ -45,6 +45,4 @@ function App() {
 
 export default App;
 
-{
-  /* id is optional in CartScreen component, hence the question mark */
-}
+/* id is optional in CartScreen component, hence the question mark */
