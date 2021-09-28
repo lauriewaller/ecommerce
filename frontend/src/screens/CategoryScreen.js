@@ -29,7 +29,7 @@ export default function CategoryScreen(props) {
           {/* <p>{thisCategory}</p> */}
           {products.map((product) => (
             // key here allows each card to be separated based on id from each obj
-            <div className="card" key={product._id}>
+            <div key={product._id}>
               <Product product={product} />
             </div>
           ))}

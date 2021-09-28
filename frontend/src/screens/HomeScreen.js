@@ -26,8 +26,8 @@ export default function HomeScreen() {
         <div className="test">
           {categories.map((category) => (
             // key here allows each card to be separated based on id from each obj
-            <div>
-              <Link to={`/category/${category}`} key={category}>
+            <div key={category}>
+              <Link to={`/category/${category}`}>
                 <div className="category">
                   <p>{category}</p>
                 </div>
