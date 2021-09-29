@@ -31,7 +31,7 @@ export default function ProductScreen(props) {
         <div>
           <Link to="/">Back to Home</Link>
           <div className="row top">
-            <div className="col-2">
+            <div className="col-1">
               <img
                 className="large"
                 src={product.image}
