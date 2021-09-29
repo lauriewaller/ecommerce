@@ -29,7 +29,7 @@ export default function HomeScreen() {
             <div key={category}>
               <Link to={`/category/${category}`}>
                 <div className="category">
-                  <p>{category}</p>
+                  <p>{category.toUpperCase()}</p>
                 </div>
               </Link>
             </div>

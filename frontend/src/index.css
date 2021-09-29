@@ -6,8 +6,12 @@ body {
   margin: 0;
   background-color: #d0c1db;
   height: 100vh;
-  font-size: 1.6rem;
-  font-family: Helvetica, Arial, sans-serif;
+  font-size: 2rem;
+  /* font-family: "Ropa Sans", sans-serif; */
+  /* font-family: "Work Sans", sans-serif; */
+  font-family: "Barlow", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.3rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -20,6 +24,7 @@ body {
   display: grid;
   grid-template-areas:
     "header"
+    /* "banner" */
     "main"
     "footer";
   grid-template-columns: 1fr;
@@ -35,9 +40,10 @@ header {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+
 main {
   grid-area: main;
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 footer {
   grid-area: footer;
@@ -107,6 +113,8 @@ header a {
 a.brand {
   color: #ffffff;
   font-size: 3rem;
+  font-family: "Nothing You Could Do", cursive;
+  font-weight: 500;
   /* font-weight: bold; */
 }
 .badge {
@@ -153,7 +161,8 @@ img.medium {
   width: 100%;
 }
 img.large {
-  width: 100%;
+  width: 75%;
+  margin: 1rem;
 }
 
 /* Card */
@@ -308,3 +317,24 @@ div .link:hover {
 .test2 {
   display: inline-block;
 }
+
+.headingFont {
+  font-family: "Nothing You Could Do", cursive;
+  font-weight: 600;
+}
+
+.banner {
+  /* grid-area: banner; */
+  object-fit: cover;
+  width: 100%;
+  height: 25rem;
+  overflow: hidden;
+  filter: grayscale(50%);
+  /* all: initial; */
+}
+/* explora -- too light  
+Cherish -- ok ish 
+Birthstone Bounce -- hard to read
+Grey Qo -- fave */
+
+/* src="/images/succulent-banner.jpg" */

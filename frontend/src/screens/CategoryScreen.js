@@ -4,6 +4,7 @@ import MessageBox from "../components/MessageBox";
 import LoadingBox from "../components/LoadingBox";
 import { useDispatch, useSelector } from "react-redux";
 import { categoriesProduct } from "../actions/productActions";
+import succulentBanner from "../images/succulent-banner.jpg";
 
 export default function CategoryScreen(props) {
   const thisCategory = props.match.params.category;
@@ -20,6 +21,7 @@ export default function CategoryScreen(props) {
     //   <h1>{thisCategory}</h1>
     // </div>
     <div>
+      <img className="banner" src={succulentBanner} alt="Succulent Banner" />
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (

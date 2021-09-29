@@ -14,44 +14,44 @@ export default function Header() {
   };
 
   return (
-    <div className="grid-container">
-      <header className="row">
-        <div>
-          <Link className="brand" to="/">
-            | Fig Tree
-          </Link>
-        </div>
-        <div>
-          <Link to="/cart">
-            Cart
-            {cartItems.length > 0 && (
-              <span className="badge">{cartItems.length}</span>
-            )}
-          </Link>
-          {userInfo ? (
-            <div className="dropdown">
-              <Link to="#">
-                {userInfo.name} <i className="fa fa-caret-down"></i>{" "}
-              </Link>
-              <ul className="dropdown-content">
-                <li>
-                  <Link to="/profile">User Profile</Link>
-                </li>
-                <li>
-                  <Link to="/orderhistory">Order History</Link>
-                </li>
-                <li>
-                  <Link to="#signout" onClick={signoutHandler}>
-                    Sign Out
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          ) : (
-            <Link to="/signin">Sign In</Link>
+    // <div className="grid-container">
+    <header className="row">
+      <div className="headingFont">
+        <Link className="brand" to="/">
+          | Fig Tree
+        </Link>
+      </div>
+      <div>
+        <Link to="/cart">
+          CART
+          {cartItems.length > 0 && (
+            <span className="badge">{cartItems.length}</span>
           )}
-        </div>
-      </header>
-    </div>
+        </Link>
+        {userInfo ? (
+          <div className="dropdown">
+            <Link to="#">
+              {userInfo.name.toUpperCase()} <i className="fa fa-caret-down"></i>{" "}
+            </Link>
+            <ul className="dropdown-content">
+              <li>
+                <Link to="/profile">USER PROFILE</Link>
+              </li>
+              <li>
+                <Link to="/orderhistory">ORDER HISTORY</Link>
+              </li>
+              <li>
+                <Link to="#signout" onClick={signoutHandler}>
+                  SIGN OUT
+                </Link>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <Link to="/signin">SIGN IN</Link>
+        )}
+      </div>
+    </header>
+    // </div>
   );
 }
