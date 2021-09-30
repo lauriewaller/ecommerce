@@ -21,7 +21,12 @@ export default function CategoryScreen(props) {
     //   <h1>{thisCategory}</h1>
     // </div>
     <div>
-      <img className="banner" src={succulentBanner} alt="Succulent Banner" />
+      <div className="container">
+        <div className="banner">
+          <img src={succulentBanner} alt="Succulent Banner" />
+          <h1 className="centered">{thisCategory}</h1>
+        </div>
+      </div>
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
