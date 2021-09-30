@@ -18,7 +18,7 @@ export default function Header() {
     <header className="row">
       <div className="headingFont">
         <Link className="brand" to="/">
-          | Fig Tree
+          Fig Tree
         </Link>
       </div>
       <div>
@@ -35,14 +35,14 @@ export default function Header() {
             </Link>
             <ul className="dropdown-content">
               <li>
-                <Link to="/profile">USER PROFILE</Link>
+                <Link to="/profile">User Profile</Link>
               </li>
               <li>
-                <Link to="/orderhistory">ORDER HISTORY</Link>
+                <Link to="/orderhistory">Order History</Link>
               </li>
               <li>
                 <Link to="#signout" onClick={signoutHandler}>
-                  SIGN OUT
+                  Sign Out
                 </Link>
               </li>
             </ul>

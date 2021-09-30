@@ -28,12 +28,11 @@ body {
     "main"
     "footer";
   grid-template-columns: 1fr;
-  grid-template-rows: 10rem 1fr 5rem;
+  grid-template-rows: 11rem 1fr 5rem;
   height: 100%;
 }
 header {
   grid-area: header;
-  flex: 1;
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
@@ -46,11 +45,14 @@ footer {
   grid-area: footer;
   background-color: #343434;
   color: #ffffff;
+  font-size: 75%;
+  letter-spacing: 0rem;
 }
 /* Common */
 h1 {
   font-size: 1.8rem;
   padding: 1rem 0;
+  letter-spacing: 0.3rem;
 }
 h2 {
   font-size: 1.6rem;
@@ -59,6 +61,7 @@ h2 {
 
 a {
   text-decoration: none;
+  color: black;
 }
 a:hover {
   color: #ff8000;
@@ -70,6 +73,7 @@ ul {
 }
 li {
   margin-top: 1rem;
+  letter-spacing: 0rem;
 }
 input,
 select,
@@ -106,6 +110,7 @@ button.small {
 header a {
   color: black;
   padding: 1rem;
+  /* font-size: 1.25vw; */
 }
 a.brand {
   color: black;
@@ -115,10 +120,10 @@ a.brand {
   /* font-weight: bold; */
 }
 .badge {
-  background-color: #f02020;
+  background-color: black;
   color: #ffffff;
   border-radius: 50%;
-  padding: 0.2rem 0.7rem;
+  padding: 0.4rem 0.4rem 0.4rem 0.7rem;
   font-size: 1.4rem;
   margin-left: 0.2rem;
 }
@@ -166,7 +171,7 @@ img.large {
 /* Card */
 .card {
   border: 0.1rem #c0c0c0 solid;
-  background-color: #e6e6fa;
+  background-color: #f8f8f8;
   border-radius: 0.5rem;
   margin: 1rem;
 }
@@ -181,7 +186,6 @@ img.large {
 }
 /* Rating */
 .rating span {
-  /* color: #f0c040; */
   margin: 0.1rem;
 }
 .rating span:last-child {
@@ -241,10 +245,11 @@ img.large {
   min-width: 12rem;
   padding: 1rem;
   z-index: 1;
-  background-color: #203040;
+  background-color: white;
   margin: 0;
   margin-top: 0.4rem;
   border-radius: 0.5rem;
+  border: 0.1rem solid #e4e4e4;
 }
 .dropdown:hover .dropdown-content {
   display: block;
@@ -320,27 +325,44 @@ div .link:hover {
   font-family: "Nothing You Could Do", cursive;
   font-weight: 600;
 }
+
+/* banner */
 .container {
   position: relative;
   text-align: center;
   color: white;
+  /* padding: 0rem;
+  margin: 0; */
+  /* changed */
+  /* display: flex; */
 }
 .centered {
   position: absolute;
   top: 50%;
   left: 50%;
+  font-size: 4.5vw;
+  /* vw makes font size responsive */
+  letter-spacing: 1rem;
+  /* overflow: auto; */
+  /* margin: auto; */
+  /* ^ necessary to vertically align text */
   transform: translate(-50%, -50%);
 }
 
-.banner img {
-  /* grid-area: banner; */
+.container img {
   object-fit: cover;
   width: 100%;
   max-height: 30rem;
   overflow: hidden;
-  filter: brightness(75%);
-  /* all: initial; */
+  filter: brightness(45%);
 }
+
+/* misc */
+
+p {
+  letter-spacing: 0.15rem;
+}
+
 /* explora -- too light  
 Cherish -- ok ish 
 Birthstone Bounce -- hard to read

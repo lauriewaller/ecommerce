@@ -4,10 +4,11 @@ import MessageBox from "../components/MessageBox";
 import LoadingBox from "../components/LoadingBox";
 import { useDispatch, useSelector } from "react-redux";
 import { categoriesProduct } from "../actions/productActions";
-import succulentBanner from "../images/succulent-banner.jpg";
+import succulentBanner from "../images/banner-3.jpg";
 
 export default function CategoryScreen(props) {
   const thisCategory = props.match.params.category;
+  const thisCategoryDisplay = props.match.params.category.toUpperCase();
   const dispatch = useDispatch();
   const productCategoryList = useSelector((state) => state.productCategoryList);
   const { loading, error, products } = productCategoryList;
@@ -22,10 +23,8 @@ export default function CategoryScreen(props) {
     // </div>
     <div>
       <div className="container">
-        <div className="banner">
-          <img src={succulentBanner} alt="Succulent Banner" />
-          <h1 className="centered">{thisCategory}</h1>
-        </div>
+        <img src={succulentBanner} alt="Succulent Banner" />
+        <div className="centered">{thisCategoryDisplay}</div>
       </div>
       {loading ? (
         <LoadingBox></LoadingBox>

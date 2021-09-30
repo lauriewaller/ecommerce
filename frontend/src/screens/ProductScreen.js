@@ -43,7 +43,9 @@ export default function ProductScreen(props) {
                 <li>
                   <h1>{product.name.toUpperCase()}</h1>
                 </li>
-                <li>Price: ${product.price}</li>
+                <li>
+                  <p>Price: ${product.price}</p>
+                </li>
                 <li>
                   <Rating
                     rating={product.rating}
@@ -51,12 +53,18 @@ export default function ProductScreen(props) {
                   ></Rating>
                 </li>
                 <li>
-                  <div className="test2">Status:</div>
+                  <div className="test2">
+                    <p>Status:</p>
+                  </div>
                   <div className="test2">
                     {product.countInStock > 0 ? (
-                      <span className="success">In Stock</span>
+                      <span className="success">
+                        <p>In Stock</p>
+                      </span>
                     ) : (
-                      <span className="danger">Unavailable</span>
+                      <span className="danger">
+                        <p>Unavailable</p>
+                      </span>
                     )}
                   </div>
                 </li>
@@ -90,7 +98,7 @@ export default function ProductScreen(props) {
                   )}
                 </div>
                 <li>
-                  Description:
+                  <p>Description:</p>
                   <p>{product.description}</p>
                 </li>
               </ul>
