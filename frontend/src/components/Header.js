@@ -16,10 +16,8 @@ export default function Header() {
   return (
     // <div className="grid-container">
     <header className="row">
-      <div className="headingFont">
-        <Link className="brand" to="/">
-          Fig Tree
-        </Link>
+      <div className="brand">
+        <Link to="/">Fig Tree</Link>
       </div>
       <div>
         <Link to="/cart">

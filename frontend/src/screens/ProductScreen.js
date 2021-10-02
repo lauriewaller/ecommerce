@@ -39,69 +39,73 @@ export default function ProductScreen(props) {
               ></img>
             </div>
             <div className="col-1">
-              <ul>
-                <li>
-                  <h1>{product.name.toUpperCase()}</h1>
-                </li>
-                <li>
-                  <p>Price: ${product.price}</p>
-                </li>
-                <li>
-                  <Rating
-                    rating={product.rating}
-                    numReviews={product.numReviews}
-                  ></Rating>
-                </li>
-                <li>
-                  <div className="test2">
-                    <p>Status:</p>
-                  </div>
-                  <div className="test2">
-                    {product.countInStock > 0 ? (
-                      <span className="success">
-                        <p>In Stock</p>
-                      </span>
-                    ) : (
-                      <span className="danger">
-                        <p>Unavailable</p>
-                      </span>
+              <div className="text">
+                <ul>
+                  <li>
+                    <h1 className="text-top">{product.name.toUpperCase()}</h1>
+                  </li>
+                  <li>
+                    <p>Price: ${product.price}</p>
+                  </li>
+                  <li>
+                    <Rating
+                      rating={product.rating}
+                      numReviews={product.numReviews}
+                    ></Rating>
+                  </li>
+                  <li>
+                    <div className="test2">
+                      <p>Status:</p>
+                    </div>
+                    <div className="test2">
+                      {product.countInStock > 0 ? (
+                        <span className="success">
+                          <p>In Stock</p>
+                        </span>
+                      ) : (
+                        <span className="danger">
+                          <p>Unavailable</p>
+                        </span>
+                      )}
+                    </div>
+                  </li>
+                  <div>
+                    {product.countInStock > 0 && (
+                      <div>
+                        <div className="test2">Qty</div>
+                        <div className="test2">
+                          <select
+                            value={qty}
+                            onChange={(e) => setQty(e.target.value)}
+                          >
+                            {[...Array(product.countInStock).keys()].map(
+                              (x) => (
+                                <option key={x + 1} value={x + 1}>
+                                  {x + 1}
+                                </option>
+                              )
+                            )}
+                          </select>
+                        </div>
+
+                        <div className="test2">
+                          {/* the onClick is defined before return stmt in this file */}
+                          <button
+                            onClick={addToCartHandler}
+                            // className="primary block"
+                          >
+                            Add to Cart
+                          </button>
+                        </div>
+                      </div>
                     )}
                   </div>
-                </li>
-                <div>
-                  {product.countInStock > 0 && (
-                    <div>
-                      <div className="test2">Qty</div>
-                      <div className="test2">
-                        <select
-                          value={qty}
-                          onChange={(e) => setQty(e.target.value)}
-                        >
-                          {[...Array(product.countInStock).keys()].map((x) => (
-                            <option key={x + 1} value={x + 1}>
-                              {x + 1}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-
-                      <div className="test2">
-                        {/* the onClick is defined before return stmt in this file */}
-                        <button
-                          onClick={addToCartHandler}
-                          // className="primary block"
-                        >
-                          Add to Cart
-                        </button>
-                      </div>
-                    </div>
-                  )}
-                </div>
-                <li>
-                  <p>Description:</p>
-                  <p>{product.description}</p>
-                </li>
-              </ul>
+                  <li>
+                    <p>Description:</p>
+                    <p>{product.description}</p>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

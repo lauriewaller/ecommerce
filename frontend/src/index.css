@@ -4,7 +4,6 @@ html {
 }
 body {
   margin: 0;
-  /* background-color: #d0c1db; */
   height: 100vh;
   font-size: 2rem;
   /* font-family: "Ropa Sans", sans-serif; */
@@ -24,7 +23,6 @@ body {
   display: grid;
   grid-template-areas:
     "header"
-    /* "banner" */
     "main"
     "footer";
   grid-template-columns: 1fr;
@@ -39,7 +37,7 @@ header {
 
 main {
   grid-area: main;
-  /* padding: 1rem; */
+  padding: 1rem;
 }
 footer {
   grid-area: footer;
@@ -112,12 +110,12 @@ header a {
   padding: 1rem;
   /* font-size: 1.25vw; */
 }
-a.brand {
+.brand {
   color: black;
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-family: "Nothing You Could Do", cursive;
   font-weight: 500;
-  /* font-weight: bold; */
+  letter-spacing: 1.2rem;
 }
 .badge {
   background-color: black;
@@ -164,8 +162,16 @@ img.medium {
 }
 img.large {
   width: 100%;
-  /* margin: 1rem;
-  padding: 1rem; */
+  margin: 1rem 1rem 1rem 0rem;
+}
+
+.text {
+  padding-left: 1rem;
+}
+
+.text-top {
+  padding-top: 0rem;
+  padding-bottom: 0rem;
 }
 
 /* Card */
@@ -290,13 +296,8 @@ img.large {
 .category {
   min-width: 30rem;
   min-height: 50rem;
-  /* border-collapse: collapse;
-  border-spacing: 10px; */
   border: 0.1rem #c0c0c0 solid;
   background-color: #e6e6fa;
-
-  /* justify-content: space-between; */
-  /* border-inline-width: 0.1rem solid black; */
   text-align: center;
   margin: 1rem;
   border-radius: 0.5rem;
@@ -305,7 +306,6 @@ img.large {
 .test {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-between; */
   align-items: center;
   justify-content: center;
   padding: 2rem;
@@ -321,20 +321,17 @@ div .link:hover {
   display: inline-block;
 }
 
-.headingFont {
+/* .headingFont {
   font-family: "Nothing You Could Do", cursive;
   font-weight: 600;
-}
+} */
 
 /* banner */
 .container {
   position: relative;
   text-align: center;
   color: white;
-  /* padding: 0rem;
-  margin: 0; */
-  /* changed */
-  /* display: flex; */
+  margin: -10px;
 }
 .centered {
   position: absolute;
@@ -343,9 +340,6 @@ div .link:hover {
   font-size: 4.5vw;
   /* vw makes font size responsive */
   letter-spacing: 1rem;
-  /* overflow: auto; */
-  /* margin: auto; */
-  /* ^ necessary to vertically align text */
   transform: translate(-50%, -50%);
 }
 
