@@ -5,6 +5,7 @@ import LoadingBox from "../components/LoadingBox";
 import { useDispatch, useSelector } from "react-redux";
 import { listCategories } from "../actions/productActions";
 import { Link } from "react-router-dom";
+import succulentBanner from "../images/banner-3.jpg";
 
 export default function HomeScreen() {
   const dispatch = useDispatch();
@@ -23,13 +24,14 @@ export default function HomeScreen() {
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
-        <div className="test">
+        <div className="category-container">
           {categories.map((category) => (
             // key here allows each card to be separated based on id from each obj
             <div key={category}>
               <Link to={`/category/${category}`}>
-                <div className="category">
-                  <p>{category.toUpperCase()}</p>
+                <div className="image-row-container">
+                  <img src={succulentBanner} alt="Succulent Banner" />
+                  <div className="centered home">{category}</div>
                 </div>
               </Link>
             </div>

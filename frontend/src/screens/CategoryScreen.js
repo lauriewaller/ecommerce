@@ -8,7 +8,7 @@ import succulentBanner from "../images/banner-3.jpg";
 
 export default function CategoryScreen(props) {
   const thisCategory = props.match.params.category;
-  const thisCategoryDisplay = props.match.params.category.toUpperCase();
+  const thisCategoryDisplay = props.match.params.category;
   const dispatch = useDispatch();
   const productCategoryList = useSelector((state) => state.productCategoryList);
   const { loading, error, products } = productCategoryList;
@@ -22,7 +22,7 @@ export default function CategoryScreen(props) {
     //   <h1>{thisCategory}</h1>
     // </div>
     <div>
-      <div className="container">
+      <div className="banner-container">
         <img src={succulentBanner} alt="Succulent Banner" />
         <div className="centered">{thisCategoryDisplay}</div>
       </div>

@@ -54,10 +54,8 @@ export default function ProductScreen(props) {
                     ></Rating>
                   </li>
                   <li>
-                    <div className="test2">
+                    <div className="product-details">
                       <p>Status:</p>
-                    </div>
-                    <div className="test2">
                       {product.countInStock > 0 ? (
                         <span className="success">
                           <p>In Stock</p>
@@ -71,32 +69,25 @@ export default function ProductScreen(props) {
                   </li>
                   <div>
                     {product.countInStock > 0 && (
-                      <div>
-                        <div className="test2">Qty</div>
-                        <div className="test2">
-                          <select
-                            value={qty}
-                            onChange={(e) => setQty(e.target.value)}
-                          >
-                            {[...Array(product.countInStock).keys()].map(
-                              (x) => (
-                                <option key={x + 1} value={x + 1}>
-                                  {x + 1}
-                                </option>
-                              )
-                            )}
-                          </select>
-                        </div>
-
-                        <div className="test2">
-                          {/* the onClick is defined before return stmt in this file */}
-                          <button
-                            onClick={addToCartHandler}
-                            // className="primary block"
-                          >
-                            Add to Cart
-                          </button>
-                        </div>
+                      <div className="product-details">
+                        <p className="product-details">Qty</p>
+                        <select
+                          value={qty}
+                          onChange={(e) => setQty(e.target.value)}
+                        >
+                          {[...Array(product.countInStock).keys()].map((x) => (
+                            <option key={x + 1} value={x + 1}>
+                              {x + 1}
+                            </option>
+                          ))}
+                        </select>
+                        {/* the onClick is defined before return stmt in this file */}
+                        <button
+                          onClick={addToCartHandler}
+                          // className="primary block"
+                        >
+                          Add to Cart
+                        </button>
                       </div>
                     )}
                   </div>
