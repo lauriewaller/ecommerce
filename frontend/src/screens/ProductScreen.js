@@ -30,6 +30,9 @@ export default function ProductScreen(props) {
       ) : (
         <div>
           <Link to="/">Back to Home</Link>
+          {/* <div>
+            <hr />
+          </div> */}
           <div className="row top">
             <div className="col-1">
               <img
@@ -95,6 +98,7 @@ export default function ProductScreen(props) {
                     <p>Description:</p>
                     <p>{product.description}</p>
                   </li>
+                  <hr />
                 </ul>
               </div>
             </div>

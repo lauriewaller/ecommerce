@@ -17,7 +17,7 @@ const data = {
   ],
   products: [
     {
-      name: 'Echeveria_"Azulita"',
+      name: 'Echeveria "Azulita"',
       category: "succulents",
       image: "/images/echeveria-azulita.jpeg",
       price: 10,
@@ -29,7 +29,7 @@ const data = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
     {
-      name: 'Echeveria_"Ramillette"',
+      name: 'Echeveria "Ramillette"',
       category: "succulents",
       image: "/images/echeveria-ramillette.jpeg",
       price: 10,
@@ -41,7 +41,7 @@ const data = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
     {
-      name: 'Graptoveria_"Opalina"',
+      name: 'Graptoveria "Opalina"',
       category: "succulents",
       image: "/images/graptoveria-opalina.jpeg",
       price: 5,
@@ -53,7 +53,7 @@ const data = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
     {
-      name: 'Echeveria_"Esther"',
+      name: 'Echeveria "Esther"',
       category: "succulents",
       image: "/images/echeveria-esther.jpeg",
       price: 7,
@@ -65,7 +65,7 @@ const data = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
     {
-      name: 'Echeveria_"Chroma"',
+      name: 'Echeveria "Chroma"',
       category: "succulents",
       image: "/images/echeveria-chroma.jpeg",
       price: 7,
@@ -77,7 +77,7 @@ const data = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
     {
-      name: "Sedum_pachyphyllum",
+      name: "Sedum pachyphyllum",
       category: "succulents",
       image: "/images/sedum-pachyphyllum.jpeg",
       price: 5,
@@ -89,7 +89,7 @@ const data = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
     {
-      name: "Rebutia_krainziana",
+      name: "Rebutia krainziana",
       category: "cacti",
       image: "/images/rebutia-krainziana.jpeg",
       price: 9,
@@ -101,7 +101,7 @@ const data = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
     {
-      name: "Apple_cactus",
+      name: "Apple cactus",
       category: "cacti",
       image: "/images/apple-cactus.jpeg",
       price: 9,
@@ -113,7 +113,7 @@ const data = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
     {
-      name: "Bishop's_cap",
+      name: "Bishop's cap",
       category: "cacti",
       image: "/images/bishops-cap.jpeg",
       price: 9,
@@ -125,7 +125,7 @@ const data = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
     {
-      name: "Mammillaria_schwarzii",
+      name: "Mammillaria schwarzii",
       category: "cacti",
       image: "/images/mammillaria-schwarzii.jpeg",
       price: 9,
@@ -137,7 +137,7 @@ const data = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
     {
-      name: "Thimble_Cactus",
+      name: "Thimble Cactus",
       category: "cacti",
       image: "/images/mammillaria-thimble-cactus.jpeg",
       price: 9,
@@ -149,7 +149,7 @@ const data = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
     {
-      name: "Rose_Quartz",
+      name: "Rose Quartz",
       category: "cacti",
       image: "/images/echinopsis-rose-quartz.jpeg",
       price: 9,
@@ -161,7 +161,7 @@ const data = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
     {
-      name: "Watch_Chain",
+      name: "Watch Chain",
       category: "succulents",
       image: "/images/crassula-muscosa-watch-chain.jpeg",
       price: 9,
@@ -173,7 +173,7 @@ const data = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
     {
-      name: "Majesty_Palm",
+      name: "Majesty Palm",
       category: "houseplants",
       image: "/images/majesty-palm.jpeg",
       price: 15,
@@ -185,7 +185,7 @@ const data = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
     {
-      name: "Pilea_PEPEROMIOIDES",
+      name: "Pilea PEPEROMIOIDES",
       category: "houseplants",
       image: "/images/pilea.jpeg",
       price: 15,
@@ -197,7 +197,7 @@ const data = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
     {
-      name: "Swiss_Cheese",
+      name: "Swiss Cheese",
       category: "houseplants",
       image: "/images/swiss-cheese.jpeg",
       price: 15,
@@ -209,7 +209,7 @@ const data = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
     {
-      name: "Money_Tree",
+      name: "Money Tree",
       category: "houseplants",
       image: "/images/money-tree.jpeg",
       price: 20,
@@ -221,7 +221,7 @@ const data = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
     {
-      name: "Yucca_Cane",
+      name: "Yucca Cane",
       category: "houseplants",
       image: "/images/yucca-cane.jpeg",
       price: 30,
@@ -233,7 +233,7 @@ const data = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
     {
-      name: "Fiddle_Leaf Fig",
+      name: "Fiddle Leaf Fig",
       category: "houseplants",
       image: "/images/fiddle-leaf.jpeg",
       price: 25,
@@ -245,7 +245,7 @@ const data = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
     },
     {
-      name: "Mass_Cane",
+      name: "Mass Cane",
       category: "houseplants",
       image: "/images/mass-cane.jpeg",
       price: 35,

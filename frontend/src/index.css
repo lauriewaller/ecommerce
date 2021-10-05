@@ -23,18 +23,27 @@ body {
   display: grid;
   grid-template-areas:
     "header"
+    "hr"
     "main"
     "footer";
   grid-template-columns: 1fr;
-  grid-template-rows: 11rem 1fr 5rem;
+  grid-template-rows: 11rem 1rem 1fr 5rem;
   height: 100%;
 }
 header {
   grid-area: header;
+  background-color: #353535;
+  /* color: white; */
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
-
+hr {
+  color: #e4e4e4;
+  background-color: #e4e4e4;
+  height: 0.1rem;
+  margin: 0rem;
+  /* border: 1rem #000000; */
+}
 main {
   grid-area: main;
   padding: 1rem;
@@ -43,7 +52,7 @@ footer {
   grid-area: footer;
   background-color: #343434;
   color: #ffffff;
-  font-size: 75%;
+  font-size: 1.3rem;
   letter-spacing: 0rem;
 }
 /* Common */
@@ -106,16 +115,18 @@ button.small {
 }
 /* Header */
 header a {
-  color: black;
+  color: white;
   padding: 1rem;
   /* font-size: 1.25vw; */
 }
 .brand {
-  color: black;
   font-size: 3.5rem;
   font-family: "Nothing You Could Do", cursive;
+  /* text-transform: uppercase; */
   font-weight: 500;
-  letter-spacing: 1.2rem;
+  letter-spacing: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 .badge {
   background-color: black;
@@ -256,6 +267,7 @@ img.large {
   margin-top: 0.4rem;
   border-radius: 0.5rem;
   border: 0.1rem solid #e4e4e4;
+  font-size: 1.5rem;
 }
 .dropdown:hover .dropdown-content {
   display: block;
@@ -306,6 +318,7 @@ img.large {
   max-height: 30rem;
   overflow: hidden;
   filter: brightness(45%);
+  border-radius: 0rem;
 }
 
 .centered {
@@ -331,7 +344,7 @@ img.large {
 }
 
 .centered.home {
-  font-size: 5rem;
+  font-size: 3.5rem;
   color: white;
   border-radius: 0.5rem;
 }
@@ -345,9 +358,8 @@ img.large {
   object-fit: cover;
   overflow: hidden;
   filter: brightness(55%);
-  min-width: 50rem;
-  min-height: 80rem;
-  max-width: 50rem;
+  width: 37rem;
+  min-height: 60rem;
   text-align: center;
   margin: 1rem;
   border-radius: 0.5rem;
