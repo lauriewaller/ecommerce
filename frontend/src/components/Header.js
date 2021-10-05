@@ -16,6 +16,25 @@ export default function Header() {
   return (
     <div>
       <header className="row">
+        <div className="dropdown menu">
+          <Link to="#">
+            <i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+          </Link>
+          <ul className="dropdown-content">
+            <li>
+              <Link to="/profile">User Profile</Link>
+            </li>
+            <li>
+              <Link to="/orderhistory">Order History</Link>
+            </li>
+            <li>
+              <Link to="#signout" onClick={signoutHandler}>
+                Sign Out
+              </Link>
+            </li>
+          </ul>
+        </div>
+
         <div className="brand">
           <Link to="/">Fig Tree</Link>
         </div>
@@ -32,7 +51,7 @@ export default function Header() {
                 <i className="fa fa-user fa-lg" aria-hidden="true"></i>{" "}
                 {/* <i className="fa fa-caret-down"></i>{" "} */}
               </Link>
-              <ul className="dropdown-content">
+              <ul className="dropdown-content right">
                 <li>
                   <Link to="/profile">User Profile</Link>
                 </li>
