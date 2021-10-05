@@ -27,20 +27,20 @@ body {
     "main"
     "footer";
   grid-template-columns: 1fr;
-  grid-template-rows: 11rem 1rem 1fr 5rem;
+  grid-template-rows: 11rem 0.5rem 1fr 5rem;
   height: 100%;
 }
 header {
   grid-area: header;
-  background-color: #353535;
+  /* background-color: #353535; */
   /* color: white; */
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
 hr {
-  color: #e4e4e4;
-  background-color: #e4e4e4;
-  height: 0.1rem;
+  color: black;
+  background-color: black;
+  height: 0rem;
   margin: 0rem;
   /* border: 1rem #000000; */
 }
@@ -115,7 +115,7 @@ button.small {
 }
 /* Header */
 header a {
-  color: white;
+  color: black;
   padding: 1rem;
   /* font-size: 1.25vw; */
 }
@@ -127,6 +127,7 @@ header a {
   letter-spacing: 1rem;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+  text-align: center;
 }
 .badge {
   background-color: black;
