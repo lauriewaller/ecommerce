@@ -22,15 +22,13 @@ export default function Header() {
           </Link>
           <ul className="dropdown-content">
             <li>
-              <Link to="/profile">User Profile</Link>
+              <Link to="/category/cacti">Cacti</Link>
             </li>
             <li>
-              <Link to="/orderhistory">Order History</Link>
+              <Link to="/category/houseplants">Houseplants</Link>
             </li>
             <li>
-              <Link to="#signout" onClick={signoutHandler}>
-                Sign Out
-              </Link>
+              <Link to="/category/succulents">Succulents</Link>
             </li>
           </ul>
         </div>

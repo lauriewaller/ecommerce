@@ -29,7 +29,7 @@ export default function ProductScreen(props) {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <div>
-          <Link to="/">
+          <Link to={`/category/${product.category}`}>
             Back to{" "}
             <div className="capitalize product-details">{product.category}</div>
           </Link>
@@ -79,16 +79,20 @@ export default function ProductScreen(props) {
                     {product.countInStock > 0 && (
                       <div className="product-details">
                         <p className="product-details">Qty</p>
-                        <select
-                          value={qty}
-                          onChange={(e) => setQty(e.target.value)}
-                        >
-                          {[...Array(product.countInStock).keys()].map((x) => (
-                            <option key={x + 1} value={x + 1}>
-                              {x + 1}
-                            </option>
-                          ))}
-                        </select>
+                        <div className="product-details">
+                          <select
+                            value={qty}
+                            onChange={(e) => setQty(e.target.value)}
+                          >
+                            {[...Array(product.countInStock).keys()].map(
+                              (x) => (
+                                <option key={x + 1} value={x + 1}>
+                                  {x + 1}
+                                </option>
+                              )
+                            )}
+                          </select>
+                        </div>
                         {/* the onClick is defined before return stmt in this file */}
                         <button
                           onClick={addToCartHandler}

@@ -5,6 +5,7 @@ import LoadingBox from "../components/LoadingBox";
 import { useDispatch, useSelector } from "react-redux";
 import { listCategories } from "../actions/productActions";
 import { Link } from "react-router-dom";
+import orangeBanner from "../images/orange-banner-sampletext.jpg";
 import succulentBanner from "../images/banner-3.jpg";
 
 export default function HomeScreen() {
