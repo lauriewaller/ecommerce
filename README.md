@@ -1,6 +1,6 @@
 # E-commerce Capstone
 
-[View the live site here!](https://www.figtreeplants.com)
+[View the live site here!](http://www.figtreeplants.com)
 
 The initial stage of my capstone project. Users can currently view a splash page with products and click on each product to view its details.
 
