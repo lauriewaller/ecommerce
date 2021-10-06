@@ -2,6 +2,8 @@
 
 [View the live site here!](http://www.figtreeplants.com)
 
+[View the sep live site here!](http://www.figtreeplants.com){:target="_blank"}
+
 The initial stage of my capstone project. Users can currently view a splash page with products and click on each product to view its details.
 
 ## Technologies Used
