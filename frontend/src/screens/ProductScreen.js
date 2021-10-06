@@ -29,7 +29,10 @@ export default function ProductScreen(props) {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <div>
-          <Link to="/">Back to Home</Link>
+          <Link to="/">
+            Back to{" "}
+            <div className="capitalize product-details">{product.category}</div>
+          </Link>
           {/* <div>
             <hr />
           </div> */}
@@ -44,6 +47,8 @@ export default function ProductScreen(props) {
             <div className="col-1">
               <div className="text">
                 <ul>
+                  <hr />
+
                   <li>
                     <h1 className="text-top">{product.name.toUpperCase()}</h1>
                   </li>

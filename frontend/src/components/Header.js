@@ -66,7 +66,23 @@ export default function Header() {
               </ul>
             </div>
           ) : (
-            <Link to="/signin">SIGN IN</Link>
+            <div className="dropdown">
+              <Link to="#">
+                <i className="fa fa-user fa-lg" aria-hidden="true"></i>{" "}
+                {/* <i className="fa fa-caret-down"></i>{" "} */}
+              </Link>
+              <ul className="dropdown-content right">
+                <li>
+                  <Link to="/profile">User Profile</Link>
+                </li>
+                <li>
+                  <Link to="/orderhistory">Order History</Link>
+                </li>
+                <li>
+                  <Link to="/signin">Sign In</Link>
+                </li>
+              </ul>
+            </div>
           )}
         </div>
       </header>
