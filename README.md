@@ -4,6 +4,8 @@
 
 [View the sep live site here!](http://www.figtreeplants.com){:target="_blank"}
 
+<a href="https://google.com" target="_blank">google link</a>
+
 The initial stage of my capstone project. Users can currently view a splash page with products and click on each product to view its details.
 
 ## Technologies Used
