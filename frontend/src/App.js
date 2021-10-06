@@ -40,7 +40,7 @@ function App() {
           ></PrivateRoute>
           <Route path="/" component={HomeScreen} exact></Route>
         </main>
-        <footer className="row center">All rights reserved</footer>
+        <footer className="row center footer">All rights reserved</footer>
       </div>
     </BrowserRouter>
   );

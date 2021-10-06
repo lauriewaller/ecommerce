@@ -147,6 +147,9 @@ header a {
 .row.center {
   justify-content: center;
 }
+.row.center.footer {
+  font-family: "Nothing You Could Do", cursive;
+}
 .row.top {
   align-items: flex-start;
 }
