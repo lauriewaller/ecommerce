@@ -14,16 +14,14 @@ orderRouter.get(
   })
 );
 
-//creates an api for post request to /api/orders
 orderRouter.post(
   "/",
-  isAuth, // gives us access to user property below
+  isAuth,
   expressAsyncHandler(async (req, res) => {
     if (req.body.orderItems.length === 0) {
       res.status(400).send({ message: "Cart is empty" });
     } else {
       const order = new Order({
-        //set the parameters equal to items that user passed as the body of this request.
         orderItems: req.body.orderItems,
         shippingAddress: req.body.shippingAddress,
         paymentMethod: req.body.paymentMethod,
@@ -33,10 +31,8 @@ orderRouter.post(
         totalPrice: req.body.totalPrice,
         user: req.user._id,
       });
-      //this saves order in the db
       const createdOrder = await order.save();
-      //status of new item is 201
-      // order: createdOrder passes order to front end
+
       res
         .status(201)
         .send({ message: "New Order Created", order: createdOrder });
@@ -71,7 +67,6 @@ orderRouter.put(
         update_time: req.body.update_time,
         email_address: req.body.email_address,
       };
-      //after changing the value of order, now we save it
       const updatedOrder = await order.save();
       res.send({ message: "Order Paid", order: updatedOrder });
     } else {
@@ -81,5 +76,3 @@ orderRouter.put(
 );
 
 export default orderRouter;
-
-//expressAsyncHandler allows us to catch errors with async functions

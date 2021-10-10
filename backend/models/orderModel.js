@@ -44,8 +44,5 @@ const orderSchema = new mongoose.Schema(
   }
 );
 
-//Now, we create a model based on this. First param is the name of model, second param is the schema of the model
 const Order = mongoose.model("Order", orderSchema);
 export default Order;
-
-//this model allows us to save the order info in the UI

@@ -6,8 +6,6 @@ body {
   margin: 0;
   height: 100vh;
   font-size: 2rem;
-  /* font-family: "Ropa Sans", sans-serif; */
-  /* font-family: "Work Sans", sans-serif; */
   font-family: "Barlow", sans-serif;
   font-weight: 500;
   letter-spacing: 0.3rem;
@@ -23,7 +21,6 @@ body {
   display: grid;
   grid-template-areas:
     "header"
-    /* "hr" */
     "main"
     "footer";
   grid-template-columns: 1fr;
@@ -32,17 +29,9 @@ body {
 }
 header {
   grid-area: header;
-  /* background-color: #353535; */
-  /* color: white; */
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
-/* hr {
-  color: black;
-  background-color: black;
-  height: 0rem;
-  margin: 0rem;
-  /* border: 1rem #000000; */
 
 main {
   grid-area: main;
@@ -117,12 +106,10 @@ button.small {
 header a {
   color: black;
   padding: 1rem;
-  /* font-size: 1.25vw; */
 }
 .brand {
   font-size: 3.5rem;
   font-family: "Nothing You Could Do", cursive;
-  /* text-transform: uppercase; */
   font-weight: 500;
   letter-spacing: 1rem;
   padding-top: 1.5rem;
@@ -244,7 +231,6 @@ img.large {
   max-width: 60rem;
   margin: 0 auto;
 }
-/* (margin: 0 auto centers the form) */
 .form > div {
   display: flex;
   flex-direction: column;
@@ -349,7 +335,6 @@ img.large {
   position: relative;
   align-items: center;
   justify-content: center;
-  /* padding-top: 2rem; */
 }
 
 .centered.home {
@@ -360,7 +345,6 @@ img.large {
 
 .image-row-container {
   position: relative;
-  /* text-align: center; */
 }
 
 .image-row-container img {
@@ -380,12 +364,6 @@ p {
   letter-spacing: 0.15rem;
 }
 
-/* misc */
-/* 
-div .link:hover {
-  color: blue;
-} */
-
 .product-details {
   display: inline-block;
   padding-right: 1rem;
@@ -397,6 +375,10 @@ div .link:hover {
 
 .capitalize {
   text-transform: capitalize;
+}
+
+.element-padding a {
+  padding-left: 2rem;
 }
 /* Mobile */
 
@@ -415,18 +397,3 @@ div .link:hover {
     font-size: 7vw;
   }
 }
-
-/* .headingFont {
-  font-family: "Nothing You Could Do", cursive;
-  font-weight: 600;
-} */
-
-/* explora -- too light  
-Cherish -- ok ish 
-Birthstone Bounce -- hard to read
-Grey Qo -- fave */
-
-/* src="/images/succulent-banner.jpg" */
-
-/* background: rgba(204, 204, 204, 0.5); */
-/* makes background transparent */

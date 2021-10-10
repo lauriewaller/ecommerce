@@ -12,7 +12,7 @@ productRouter.get(
     res.send(products);
   })
 );
-//creates 6 products from data.products
+//creates product list from data.products
 productRouter.get(
   "/seed",
   expressAsyncHandler(async (req, res) => {
@@ -25,7 +25,6 @@ productRouter.get(
 productRouter.get(
   "/:id",
   expressAsyncHandler(async (req, res) => {
-    //findById returns a promise. By using await, this will be converted to real data and set to product
     const product = await Product.findById(req.params.id);
     if (product) {
       res.send(product);
@@ -62,5 +61,3 @@ productRouter.get(
 );
 
 export default productRouter;
-
-// .find().sort({field : 1}).distinct('field')

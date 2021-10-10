@@ -4,7 +4,6 @@ import { savePaymentMethod } from "../actions/cartActions";
 import CheckoutSteps from "../components/CheckoutSteps";
 
 export default function PaymentMethodScreen(props) {
-  //use hook to import cart data from store
   const cart = useSelector((state) => state.cart);
   const { shippingAddress } = cart;
   if (!shippingAddress.address) {
@@ -19,7 +18,6 @@ export default function PaymentMethodScreen(props) {
   };
   return (
     <div>
-      {/* sets steps1-3 as true */}
       <CheckoutSteps step1 step2 step3></CheckoutSteps>
       <form className="form" onSubmit={submitHandler}>
         <div>

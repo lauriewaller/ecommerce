@@ -10,7 +10,6 @@ import { ORDER_PAY_RESET } from "../constants/orderConstants";
 
 export default function OrderScreen(props) {
   const orderId = props.match.params.id;
-  //gets status of PayPal SDK
   const [sdkReady, setSdkReady] = useState(false);
 
   const orderDetails = useSelector((state) => state.orderDetails);
@@ -23,30 +22,22 @@ export default function OrderScreen(props) {
   } = orderPay;
   const dispatch = useDispatch();
   useEffect(() => {
-    //send req to backend to get client id
     const addPayPalScript = async () => {
-      // data contains client id
       const { data } = await Axios.get("/api/config/paypal");
-      // creates script element
       const script = document.createElement("script");
       script.type = "text/javascript";
       script.src = `https://www.paypal.com/sdk/js?client-id=${data}`;
       script.async = true;
-      //onload is an event handler and happens when the script.src url is ready to load
       script.onload = () => {
         setSdkReady(true);
       };
-      //adds script to document body. By running this line, this entire script will be added as the last child of the body in the HTML document
       document.body.appendChild(script);
     };
-    //in these situations, we need to refresh the page and update the page based on the new order
     if (!order || successPay || (order && order._id !== orderId)) {
-      //adding this line corrected the infinite loading issue when paying for order
       dispatch({ type: ORDER_PAY_RESET });
       dispatch(detailsOrder(orderId));
     } else {
       if (!order.isPaid) {
-        //checks if paypal is already loaded
         if (!window.paypal) {
           addPayPalScript();
         } else {
@@ -54,11 +45,9 @@ export default function OrderScreen(props) {
         }
       }
     }
-    //when there is a change in order, orderId, sdkReady, addPayPalScript will run
   }, [dispatch, order, orderId, sdkReady, successPay]);
 
   const successPaymentHandler = (paymentResult) => {
-    //first param is the order itself. paymentResult is the result of your PayPal payment
     dispatch(payOrder(order, paymentResult));
   };
   return loading ? (

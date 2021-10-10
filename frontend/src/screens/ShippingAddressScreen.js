@@ -4,7 +4,6 @@ import { saveShippingAddress } from "../actions/cartActions";
 import CheckoutSteps from "../components/CheckoutSteps";
 
 export default function ShippingAddressScreen(props) {
-  // userSignin and userInfo lines allow us to authorize user before showing the page.
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
   if (!userInfo) {
@@ -23,12 +22,10 @@ export default function ShippingAddressScreen(props) {
     dispatch(
       saveShippingAddress({ fullName, address, city, postalCode, country })
     );
-    //redirects user to payment screen:
     props.history.push("/payment");
   };
   return (
     <div>
-      {/* we set step1 and step2 to true: */}
       <CheckoutSteps step1 step2></CheckoutSteps>
       <form className="form" onSubmit={submitHandler}>
         <div>

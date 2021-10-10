@@ -10,5 +10,3 @@ export default function CheckoutSteps(props) {
     </div>
   );
 }
-
-//this will be the header at top of order steps

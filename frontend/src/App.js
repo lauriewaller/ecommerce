@@ -47,5 +47,3 @@ function App() {
 }
 
 export default App;
-
-/* id is optional in CartScreen component, hence the question mark */

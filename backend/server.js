@@ -9,8 +9,8 @@ import path from "path";
 dotenv.config();
 
 const app = express();
-app.use(express.json()); // adds new middleware to parse JSON data in body of request. Fixes "message": "Cannot read property 'email' of undefined" when making Post request.
-app.use(express.urlencoded({ extended: true })); //this line also works in tandem so that all post requests with a body will be parsed.
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost/amazona", {
   useNewUrlParser: true,
@@ -22,18 +22,13 @@ app.use("/api/users", userRouter);
 app.use("/api/products", productRouter);
 app.use("/api/orders", orderRouter);
 app.get("/api/config/paypal", (req, res) => {
-  //sb stands for sandbox
   res.send(process.env.PAYPAL_CLIENT_ID || "sb");
 });
-// the code below makes it possible to serve react files
 const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, "/frontend/build")));
 app.get("*", (req, res) =>
   res.sendFile(path.join(__dirname, "/frontend/build/index.html"))
 );
-// app.get('/', (req, res) => {
-//   res.send('Server is ready');
-// }); removed this bc root address should point to build version of react
 
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });

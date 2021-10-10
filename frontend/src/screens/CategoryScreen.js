@@ -28,7 +28,6 @@ export default function CategoryScreen(props) {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <div className="row center">
-          {/* <p>{thisCategory}</p> */}
           {products.map((product) => (
             // key here allows each card to be separated based on id from each obj
             <div key={product._id}>

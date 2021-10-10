@@ -6,11 +6,9 @@ import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
 
 export default function SigninScreen(props) {
-  //for set email and set pw, we create a hook:
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // in props.location.search.split, [1] returns the 2nd item in the query string
   const redirect = props.location.search
     ? props.location.search.split("=")[1]
     : "/";
@@ -26,7 +24,6 @@ export default function SigninScreen(props) {
   };
 
   useEffect(() => {
-    //if userinfo has a value, then userSignin was successful
     if (userInfo) {
       props.history.push(redirect);
     }
@@ -42,7 +39,6 @@ export default function SigninScreen(props) {
         <div>
           <label htmlFor="email">Email address</label>
           <input
-            // by setting id to email, w are connecting this input to the label above
             type="email"
             id="email"
             placeholder="Enter email"

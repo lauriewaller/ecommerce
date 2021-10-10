@@ -33,7 +33,6 @@ export default function ProfileScreen() {
   }, [dispatch, userInfo._id, user]);
   const submitHandler = (e) => {
     e.preventDefault();
-    // dispatch update profile
     if (password !== confirmPassword) {
       alert("Password and Confirm Password Do Not Match");
     } else {

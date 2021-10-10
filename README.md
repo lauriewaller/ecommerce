@@ -1,7 +1,5 @@
 # E-commerce Capstone
 
-The initial stage of my capstone project. Users can currently view a splash page with products and click on each product to view its details.
-
 ## Technologies Used
 
 - MongoDB

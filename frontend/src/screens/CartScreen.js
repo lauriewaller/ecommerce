@@ -25,7 +25,6 @@ export default function CartScreen(props) {
   const checkoutHandler = () => {
     props.history.push("/signin?redirect=shipping");
   };
-  // after signin, user will be redirected to shipping page
 
   return (
     <div className="row top">
@@ -88,7 +87,6 @@ export default function CartScreen(props) {
               <h2>
                 Subtotal ({cartItems.reduce((a, c) => a + c.qty, 0)} items) : $
                 {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
-                {/* shows both the number of items and subtotal, a = accumulator, and c = currentItem. default of acc = 0. */}
               </h2>
             </li>
             <li>

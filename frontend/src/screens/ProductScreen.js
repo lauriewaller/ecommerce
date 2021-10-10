@@ -9,7 +9,7 @@ import Rating from "../components/Rating";
 export default function ProductScreen(props) {
   const dispatch = useDispatch();
   const productId = props.match.params.id;
-  const [qty, setQty] = useState(1); //default value of qty is set to 1
+  const [qty, setQty] = useState(1);
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
 
@@ -19,7 +19,7 @@ export default function ProductScreen(props) {
 
   const addToCartHandler = () => {
     props.history.push(`/cart/${productId}?qty=${qty}`);
-  }; // I think the id allows us to add a new item to the cart
+  };
 
   return (
     <React.Fragment>
@@ -29,13 +29,14 @@ export default function ProductScreen(props) {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <div>
-          <Link to={`/category/${product.category}`}>
-            Back to{" "}
-            <div className="capitalize product-details">{product.category}</div>
-          </Link>
-          {/* <div>
-            <hr />
-          </div> */}
+          <div className="element-padding">
+            <Link to={`/category/${product.category}`}>
+              Back to{" "}
+              <div className="capitalize product-details">
+                {product.category}
+              </div>
+            </Link>
+          </div>
           <div className="row top">
             <div className="col-1">
               <img
@@ -93,13 +94,7 @@ export default function ProductScreen(props) {
                             )}
                           </select>
                         </div>
-                        {/* the onClick is defined before return stmt in this file */}
-                        <button
-                          onClick={addToCartHandler}
-                          // className="primary block"
-                        >
-                          Add to Cart
-                        </button>
+                        <button onClick={addToCartHandler}>Add to Cart</button>
                       </div>
                     )}
                   </div>

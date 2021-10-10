@@ -47,7 +47,6 @@ export default function Header() {
             <div className="dropdown">
               <Link to="#">
                 <i className="fa fa-user fa-lg" aria-hidden="true"></i>{" "}
-                {/* <i className="fa fa-caret-down"></i>{" "} */}
               </Link>
               <ul className="dropdown-content right">
                 <li>
@@ -67,7 +66,6 @@ export default function Header() {
             <div className="dropdown">
               <Link to="#">
                 <i className="fa fa-user fa-lg" aria-hidden="true"></i>{" "}
-                {/* <i className="fa fa-caret-down"></i>{" "} */}
               </Link>
               <ul className="dropdown-content right">
                 <li>
@@ -84,8 +82,6 @@ export default function Header() {
           )}
         </div>
       </header>
-
-      {/* <hr /> */}
     </div>
   );
 }

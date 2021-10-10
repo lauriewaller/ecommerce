@@ -8,16 +8,13 @@ import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
 
 export default function PlaceOrderScreen(props) {
-  //use hook to import cart data from store
   const cart = useSelector((state) => state.cart);
   if (!cart.paymentMethod) {
     props.history.push("/payment");
   }
   const orderCreate = useSelector((state) => state.orderCreate);
   const { loading, success, error, order } = orderCreate;
-  //accepts number, and then rounds to 2 digits after decimal point. toFixed converts to string, then Number converts to number. So, we're converting float numbers to 2-digit numbers
   const toPrice = (num) => Number(num.toFixed(2)); // 5.123 => "5.12" => 5.12
-  //acc is initiliazed at 0
   cart.itemsPrice = toPrice(
     cart.cartItems.reduce((a, c) => a + c.qty * c.price, 0)
   );
@@ -26,10 +23,8 @@ export default function PlaceOrderScreen(props) {
   cart.totalPrice = cart.itemsPrice + cart.shippingPrice + cart.taxPrice;
   const dispatch = useDispatch();
   const placeOrderHandler = () => {
-    // inside createOrder, deconstructs cart to rename as orderItems because the backend expects orderItems
     dispatch(createOrder({ ...cart, orderItems: cart.cartItems }));
   };
-  //accepts a func and a dependency list
   useEffect(() => {
     if (success) {
       props.history.push(`/order/${order._id}`);
@@ -101,7 +96,6 @@ export default function PlaceOrderScreen(props) {
               <li>
                 <div className="row">
                   <div>Items</div>
-                  {/* the toFixed method for each amount, with 2 passed in, allows for a 0 to be added at the end of the price */}
                   <div>${cart.itemsPrice.toFixed(2)}</div>
                 </div>
               </li>
@@ -137,7 +131,6 @@ export default function PlaceOrderScreen(props) {
                   Place Order
                 </button>
               </li>
-              {/* //i think this means if loading is true show LoadingBox */}
               {loading && <LoadingBox></LoadingBox>}
               {error && <MessageBox variant="danger">{error}</MessageBox>}
             </ul>
