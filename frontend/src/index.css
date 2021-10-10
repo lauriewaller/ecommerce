@@ -384,7 +384,8 @@ p {
 
 @media only screen and (max-width: 360px) {
   .brand {
-    font-size: 2rem;
+    font-size: 2.75rem;
+    letter-spacing: 0rem;
   }
 }
 
@@ -395,5 +396,9 @@ p {
 
   .centered {
     font-size: 7vw;
+  }
+
+  .brand {
+    letter-spacing: 0.5rem;
   }
 }
