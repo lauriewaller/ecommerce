@@ -3,6 +3,7 @@
 ## Technologies Used
 
 - MongoDB
+- Mongoose
 - Express.js
 - Node.js
 - Axios
@@ -10,7 +11,6 @@
 - React-router
 - Redux
 - Redux Thunk
-- Mongoose
 - PayPal API
 - Heroku
 - HTML
@@ -35,11 +35,13 @@
 - User can view categories of products
 - User can view account information
 - User can update account information
+- Admin can view all current orders
+
+- add unique images for each category on home page
 - User is emailed an order receipt
 - User can rate and review products
 - User can search for specific products
 - Admin authorization and authentication
-- Admin can view all current orders
 - Admin can view all completed orders
 - Admin can view all user contact information
 - Admin can handle refunds in payment processing
@@ -49,5 +51,4 @@
 - Admin can delete products
 - Admin can update products to show returns received
 - Admin can view inventory
-- Admin can Live Chat with customers
 - Admin can view, delete, and edit users

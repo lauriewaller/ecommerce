@@ -29,7 +29,6 @@ export default function CategoryScreen(props) {
       ) : (
         <div className="row center">
           {products.map((product) => (
-            // key here allows each card to be separated based on id from each obj
             <div key={product._id}>
               <Product product={product} />
             </div>
